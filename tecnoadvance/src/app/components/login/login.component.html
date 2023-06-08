@@ -1,1 +1,22 @@
-<p>login works!</p>
+<div class="container">
+  <div class="slider login" (click)="selectForm('login')"></div>
+  <div class="btn">
+    <button class="login" (click)="selectForm('login')">Login</button>
+    <button class="signup" (click)="selectForm('signup')">Signup</button>
+  </div>
+  <div class="form-section">
+    <div class="login-box" [ngClass]="{'active': selectedForm === 'login'}">
+      <input type="email" class="email ele" placeholder="Email" formControlName="email">
+      <input type="password" class="password ele" placeholder="Password" formControlName="password">
+      <button class="clkbtn" (click)="submitLogin()">Login</button>
+    </div>
+    <div class="signup-box" [ngClass]="{'active': selectedForm === 'signup'}">
+      <input type="text" class="name ele" placeholder="Name" formControlName="name">
+      <input type="email" class="email ele" placeholder="TuCorreo@gmail.com" formControlName="email">
+      <input type="phone" class="phone ele" placeholder="5561930081" formControlName="phone">
+      <input type="password" class="password ele" placeholder="Password" formControlName="password">
+      <input type="password" class="password ele" placeholder="Confirm password">
+      <button class="clkbtn" (click)="submitRegistration()">Signup</button>
+    </div>
+  </div>
+</div>
